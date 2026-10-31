@@ -23,6 +23,9 @@ Pinhole:
 - [`pinhole_model/`](pinhole_model/) – **Pinhole camera: projection**: the pinhole camera model of computer vision,
   intrinsics K, pose [R | t], the projection matrix and OpenCV distortion, with a 3D scene and its image.
   Self-contained like `defocus/`. See [`pinhole_model/README.md`](pinhole_model/README.md).
+- [`epipolar/`](epipolar/) – **Pinhole cameras: epipolar geometry**: two cameras on one scene, the epipolar plane,
+  lines and epipoles, the essential and fundamental matrices. Self-contained like `defocus/`.
+  See [`epipolar/README.md`](epipolar/README.md).
 
 ## Checks
 
@@ -31,11 +34,13 @@ Pinhole:
 - `node calculators/test_optics.js` – checks the calculator formulas against textbook values.
 - `node pinhole_model/test_camera.js` – checks the projection maths, including values from OpenCV's `cv2.projectPoints`.
 - `node defocus/test_lens.js` – checks the thin-lens and blur-circle maths.
+- `node epipolar/test_epipolar.js` – checks the two-view maths, including F against OpenCV's `cv2.findFundamentalMat`.
 
 ## Publishing
 
 `.github/workflows/pages.yml` publishes only the pages themselves (`index.html`, `3d/index.html`, `2d/index.html`,
-`calculators/index.html`, `calculators/optics.js`, `pinhole_model/index.html`, `pinhole_model/camera.js` and
-`defocus/`'s `index.html`, `camera.js` and `lens.js`) to GitHub Pages on every push to `main`, plus `favicon.ico`,
+`calculators/index.html`, `calculators/optics.js`, `pinhole_model/index.html`, `pinhole_model/camera.js`,
+`defocus/`'s `index.html`, `camera.js` and `lens.js`, and `epipolar/`'s `index.html`, `camera.js` and `epipolar.js`)
+to GitHub Pages on every push to `main`, plus `favicon.ico`,
 `404.html` and uppercase alias folders (`2D/`, `3D/`) that redirect to the real directories, since Pages paths are
 case-sensitive.

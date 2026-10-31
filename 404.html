@@ -16,7 +16,7 @@
   // /2d or /3d (or /Calculators) would fail: map the first segment after the site root onto the
   // real directory names, ignoring case, and go there.
   (function () {
-    var dirs = ['3d', '2d', 'calculators', 'pinhole_model', 'defocus'];
+    var dirs = ['3d', '2d', 'calculators', 'pinhole_model', 'defocus', 'epipolar'];
     var parts = location.pathname.split('/').filter(Boolean);
     var root = parts.length && parts[0].toLowerCase() === 'camera_tools' ? 1 : 0;   // project site prefix
     var seg = parts[root] || '';

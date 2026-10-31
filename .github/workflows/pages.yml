@@ -29,6 +29,7 @@ jobs:
           mkdir -p site/calculators && cp calculators/index.html calculators/optics.js site/calculators/
           mkdir -p site/pinhole_model && cp pinhole_model/index.html pinhole_model/camera.js site/pinhole_model/
           mkdir -p site/defocus && cp defocus/index.html defocus/camera.js defocus/lens.js site/defocus/
+          mkdir -p site/epipolar && cp epipolar/index.html epipolar/camera.js epipolar/epipolar.js site/epipolar/
           cp 404.html favicon.ico site/
           # uppercase aliases: /2D and /3D are plain redirect pages to the real (lowercase) directories
           for d in 2d 3d; do
